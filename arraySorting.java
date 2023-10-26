@@ -23,11 +23,11 @@ class arraySorting {
         Arrays.sort(stringArray2);
         System.out.println("After Sorting: "+Arrays.toString(stringArray2));
 
-        System.out.println("Sorting integer array using default method:");
+        System.out.println("Sorting integer array without using default method:");
         int_sort(numArray1);
         System.out.println(Arrays.toString(numArray1));
 
-        System.out.println("Sorting string array using default method:");
+        System.out.println("Sorting string array without using default method:");
         string_sort(stringArray1);
         System.out.println(Arrays.toString(stringArray1));
     }
