@@ -2,33 +2,34 @@ import java.util.*;
 
 class arraySorting {
     public static void main(String[] args) {
-        int array1[] = {12,2,23,1,90};
-        String array2[] = {"anu","xavier","Tae","anna"};
-        int arr[] = new int[5];
+        int numArray1[] = {12,2,23,1,90};
+        String stringArray1[] = {"anu","xavier","Tae","anna"};
+        
+        int numArray2[] = new int[5];
         Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = sc.nextInt();
+        for (int i = 0; i < numArray2.length; i++) {
+            numArray2[i] = sc.nextInt();
         }
-        System.out.println("Before Sorting: "+Arrays.toString(arr));
-        Arrays.sort(arr);
-        System.out.println("After Sorting: "+Arrays.toString(arr));
+        System.out.println("Before Sorting: "+Arrays.toString(numArray2));
+        Arrays.sort(numArray2);
+        System.out.println("After Sorting: "+Arrays.toString(numArray2));
 
-        String arr2[] = new String[3];
+        String stringArray2[] = new String[3];
         Scanner scc = new Scanner(System.in);
-        for(int j=0; j<arr2.length;j++){
-            arr2[j]=scc.nextLine();
+        for(int j=0; j<stringArray2.length;j++){
+            stringArray2[j]=scc.nextLine();
         }
-        System.out.println("Before Sorting: "+Arrays.toString(arr2));
-        Arrays.sort(arr2);
-        System.out.println("After Sorting: "+Arrays.toString(arr2));
+        System.out.println("Before Sorting: "+Arrays.toString(stringArray2));
+        Arrays.sort(stringArray2);
+        System.out.println("After Sorting: "+Arrays.toString(stringArray2));
 
         System.out.println("Sorting integer array using default method:");
-        int_sort(array1);
-        System.out.println(Arrays.toString(array1));
+        int_sort(numArray1);
+        System.out.println(Arrays.toString(numArray1));
 
         System.out.println("Sorting string array using default method:");
-        string_sort(array2);
-        System.out.println(Arrays.toString(array2));
+        string_sort(stringArray1);
+        System.out.println(Arrays.toString(stringArray1));
     }
     public static void int_sort(int array1[]){
         for(int i=0; i<array1.length;i++){
