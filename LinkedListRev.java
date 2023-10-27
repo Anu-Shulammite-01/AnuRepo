@@ -17,7 +17,6 @@ class LinkedListRev {
         System.out.println("Reversed List: " + numList);
 
         //without using reverse
-
         Node head = null;
         for (int i : numList){
             if (head == null){
