@@ -6,7 +6,12 @@ class ArrayCompare {
         int min = numList[0];
         int max = numList[0];
         
-        String stringList[] = {"a","a","a"};
+        String stringList[] = new String[3];
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter three strings: ");
+        for (int i=0;i<stringList.length;i++){
+            stringList[i] = sc.next();
+        }
         String equal = stringList[0];
         String flag = "True";
         
