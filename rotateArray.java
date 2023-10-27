@@ -5,16 +5,16 @@ class rotateArray {
         int numArray[] = { 1, 2, 3, 4, 5 };
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of rotations:");
-        int n = sc.nextInt();
-        rotateArr(numArray, n);
+        int rotation1 = sc.nextInt();
+        rotateArr(numArray, rotation1);
         System.out.println(Arrays.toString(numArray));
-        int n1 = sc.nextInt();
-        rotateArr(numArray, n1);
+        int rotation2 = sc.nextInt();
+        rotateArr(numArray, rotation2);
         System.out.println(Arrays.toString(numArray));
     }
 
-    public static void rotateArr(int array[], int n) {
-        for (int i = 0; i < n; i++) {
+    public static void rotateArr(int array[], int rotation) {
+        for (int i = 0; i < rotation; i++) {
             int temp = array[array.length - 1];
             for (int j = array.length - 1; j > 0; j--) {
                 array[j] = array[j - 1];
