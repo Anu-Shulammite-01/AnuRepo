@@ -53,5 +53,3 @@ class Node {
         this.next = next;
     }
 }
-
-
