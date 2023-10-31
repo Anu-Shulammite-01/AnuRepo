@@ -51,8 +51,12 @@ class Exception_Ex{
             System.out.println("This block will always execute whether there was an exception or not.");
         }
 
-        
-            
+        try{
+            checkAge(200);
+        }
+        catch (IllegalArgumentException iae){
+            iae.printStackTrace();
+        }
     }
     //using throw
     static void checkAge(int age){
