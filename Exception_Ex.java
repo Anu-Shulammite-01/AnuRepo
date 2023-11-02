@@ -29,16 +29,6 @@ class Exception_Ex{
             System.out.println("You are trying to access a null string.");
         }
 
-        //try with resources
-        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
-            System.out.println("Enter a number: ");
-            int num = Integer.parseInt(br.readLine());
-            System.out.println("The entered number is: "+num);
-        }
-        catch (IOException ioe){
-            System.out.println("IO Error occured while reading the input from user.");
-        }
-
         //try with finally
         boolean flag = true;
         try{
@@ -56,6 +46,16 @@ class Exception_Ex{
         }
         catch (IllegalArgumentException iae){
             iae.printStackTrace();
+        }
+
+        //try with resources
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
+            System.out.println("Enter a number: ");
+            int num = Integer.parseInt(br.readLine());
+            System.out.println("The entered number is: "+num);
+        }
+        catch (IOException ioe){
+            System.out.println("IO Error occured while reading the input from user.");
         }
     }
     //using throw
