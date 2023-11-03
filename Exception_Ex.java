@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.InputMismatchException;
 class Exception_Ex{
     public static void main(String[] args){
         //ArrayIndexOutOfBoundsException
@@ -28,7 +29,19 @@ class Exception_Ex{
         catch (NullPointerException npe){
             System.out.println("You are trying to access a null string.");
         }
-
+        //try with resources
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
+            System.out.println("Enter a number: ");
+            int num = Integer.parseInt(br.readLine());
+            System.out.println("The entered number is: "+num);
+        }
+        catch (IOException ioe){
+            System.out.println("IO Error occured while reading the input from user.");
+        }
+        catch(NumberFormatException nfe){
+            System.out.println("Invalid input entered for integer type variable.");
+        }
+        
         //try with finally
         boolean flag = true;
         try{
@@ -48,15 +61,7 @@ class Exception_Ex{
             iae.printStackTrace();
         }
 
-        //try with resources
-        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
-            System.out.println("Enter a number: ");
-            int num = Integer.parseInt(br.readLine());
-            System.out.println("The entered number is: "+num);
-        }
-        catch (IOException ioe){
-            System.out.println("IO Error occured while reading the input from user.");
-        }
+        
     }
     //using throw
     static void checkAge(int age){

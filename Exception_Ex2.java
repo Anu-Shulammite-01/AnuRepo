@@ -3,7 +3,7 @@ class Exception_Ex2 {
         int num1 = 23;
         int num2 = 0;
         try{
-            int result = num1 / num2;
+            int result = divide(num1,num2);
         }
         catch (ArithmeticException e){
             System.out.println("Error: " + e);
