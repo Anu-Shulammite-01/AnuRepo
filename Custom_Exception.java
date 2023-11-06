@@ -14,7 +14,9 @@ class Custom_Exception {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
         ArrayList<Integer> numList = new ArrayList<Integer>();
-        ArrayList<Integer> numList1 = new ArrayList<Integer>();
+        ArrayList<Integer> evenNumber = new ArrayList<Integer>();
+        ArrayList<Integer> oddNumber = new ArrayList<Integer>();
+
         for(int i=2;i<num;i++){
             if(num % i == 0){
                 numList.add(i);
@@ -22,22 +24,24 @@ class Custom_Exception {
         }
         System.out.println(numList);
         int n = numList.size(); 
-
+        for(int j=0;j<n;j++){
+            if(numList.get(j)%2==0){
+                evenNumber.add(numList.get(j));
+            }
+            else{
+                oddNumber.add(numList.get(j));
+            }
+        }
         try{
-            for(int j=0;j<n;j++){
-                if(numList.get(j)%2==0){
-                    numList1.add(numList.get(j));
-                }
-                else{
-                    throw new MyException("There are odd factors of the given number");
-                }
+            if(oddNumber.size()>0){
+                throw new MyException("There are odd factors of the given number");
             }
         }
         catch (MyException e){
             System.out.print(e);
         }
         finally{
-            System.out.println("\nThe list of even factors is: "+numList1);
+            System.out.println("\nThe list of even factors is: "+evenNumber);
         }
     }
 }
