@@ -106,5 +106,15 @@ class Threads_Ex{
         }
         System.out.println(c.count);
         System.out.println(Thread.activeCount());
+        tr2.interrupt();
+        try{
+            if(tr2.isInterrupted()){
+            throw new InterruptedException("Thread is interrupted!");
+            }
+        }
+        catch(InterruptedException ie){
+            System.out.println(ie.getMessage());
+        }
+        
     }
 }
