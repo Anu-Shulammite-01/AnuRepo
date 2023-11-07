@@ -105,5 +105,6 @@ class Threads_Ex{
             System.out.println(e.getMessage());
         }
         System.out.println(c.count);
+        System.out.println(Thread.activeCount());
     }
 }
