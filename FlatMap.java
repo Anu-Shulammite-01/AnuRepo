@@ -28,7 +28,7 @@ class FlatMap {
         List<List<student_Map>> finalL = Arrays.asList(s1,s2);
 
         // FlatMap
-        List<String> result = finalL.stream().flatMap(x -> x.stream()).map(s->s.name).collect(Collectors.toList());
+        List<String> result = finalL.stream().flatMap(x -> x.stream()).map(s->s.name).sorted().collect(Collectors.toList());
         System.out.println(result);
     }
 }
