@@ -4,7 +4,6 @@ import java.util.*;
 import java.util.stream.*;
 
 class Min_Max {
-    private static boolean anyMatch;
 
     public static void main(String[] args) {
         List<Integer> numL = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 1, 5, 7);
