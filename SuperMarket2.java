@@ -45,12 +45,15 @@ class SuperMarket2 {
                 System.out.println("Total cost for "+pr.pname+" is Rs."+((pr.price)*cnt)+".");
                 System.out.println("You have successfully purchased "+pr.pname);
             }
+            else{
+                System.out.println(pr.pname+" sold out");
+            }
         }
         else{
             System.out.println("Item not found!");
         }
         System.out.println("Products left after buying: ");
-        productList.stream().filter(x-> x.countP > 0).map(y -> y.pname + " , "+ y.price + " , "+ y.countP).distinct().collect(Collectors.toCollection(ArrayList::new)).forEach(z -> System.out.println(z));
+        productList.stream().filter(x-> x.countP > 0).map(y -> y.pname + " , "+ y.price + " , "+ y.countP).distinct().collect(Collectors.toCollection(ArrayList::new)).forEach(System.out::println);
         sc.close();
     }
 }
