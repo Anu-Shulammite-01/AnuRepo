@@ -15,7 +15,7 @@ class Items {
 
 class SuperMarket2 {
     public static void main(String[] args) {
-        List<Items> productList = new ArrayList<Items>();
+        List<Items> productList = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         System.out.println("Do you wanna add the products: ");
         String choice = sc.nextLine();
@@ -51,6 +51,6 @@ class SuperMarket2 {
         }
         System.out.println("Products left after buying: ");
         productList.stream().filter(x-> x.countP > 0).map(y -> y.pname + " , "+ y.price + " , "+ y.countP).distinct().collect(Collectors.toCollection(ArrayList::new)).forEach(z -> System.out.println(z));
-
+        sc.close();
     }
 }
