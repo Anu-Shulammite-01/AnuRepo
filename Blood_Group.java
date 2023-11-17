@@ -27,15 +27,20 @@ class Donor{
         this.phn_no=phn_no;
         this.dgroup=dgroup;
     }
-    public void check(int phn_no) {
-        if (donorsList.contains(phn_no)) {
-            throw new IllegalArgumentException("User already exists!");
+    public boolean check(int phn_no) {
+        for(Object i:donorsList){
+            if(((Donor)i).phn_no==phn_no){
+                System.out.println("Already Registered");
+                return false;
+            }
         }
+        return true;
     }
 
     public void addDonor(String dname,int phn_no,String dgroup){
-        check(phn_no);
-        donorsList.add(new Donor(dname,phn_no,dgroup));
+        if(check(phn_no)){
+            donorsList.add(new Donor(dname,phn_no,dgroup));
+        }
     }
 
     public List getDonors(){
@@ -79,26 +84,33 @@ class Blood_Group{
             int phoneNo = sc.nextInt();
             System.out.print("Blood Group: ");
             String bldgrp = sc.nextLine();
-            d.addDonor(name,phoneNo,bldgrp);
             sc.nextLine();
+            d.addDonor(name,phoneNo,bldgrp);
+            if(BloodBank.containsKey(bldgrp)){
+                final int value = ((Object) BloodBank).getValue(bldgrp);
+                BloodBank.put(bldgrp,value+1);
+            } else {
+                System.out.println("Blood group " + bldgrp + " not found in the blood bank.");
+            }            
             System.out.println("Do you wanna continue adding the details of the donors:");
             m = sc.nextLine();
         }
         List<Integer> PL= patientsList.stream().map(s->s.priority).sorted().collect(Collectors.toList());
         System.out.println(PL);
+        BloodBank.entrySet().forEach(System.out::println);
         for (int i = 0; i < PL.size() ; i++) {
             if(BloodBank.containsKey(patientsList.get(i).bloodGrp)){
                 if((BloodBank.get(patientsList.get(i).bloodGrp))>=patientsList.get(i).bloodL){
                     System.out.println("The patient "+patientsList.get(i).pname+" has been matched with a donor.");
                     BloodBank.replace(patientsList.get(i).bloodGrp,(BloodBank.get(patientsList.get(i).bloodGrp)) - (patientsList.get(i).bloodL));
                 }
-                else if(d.getDonors().contains(patientsList.get(i).bloodGrp)){
+                /*else if(d.getDonors().contains(patientsList.get(i).bloodGrp)){
                     System.out.println("Match found!");
                     break;
-                }
+                }*/
                 else{
                     System.out.println("Not enough blood available in "+patientsList.get(i).bloodGrp+" group.");
-                    System.out.println("No match found!");
+                    //System.out.println("No match found!");
                 }
             }
             else{
