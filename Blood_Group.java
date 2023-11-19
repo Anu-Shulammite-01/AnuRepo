@@ -52,7 +52,7 @@ class Blood_Group{
         Scanner sc = new Scanner(System.in);
         Donor d = new Donor();
         ArrayList<Patients> patientsList = new ArrayList<>();
-        Map<String,Integer> BloodBank = new HashMap<String,Integer>();
+        Map<String,Integer> BloodBank = new HashMap<>();
         BloodBank.put("A",5);
         BloodBank.put("AB",3);
         BloodBank.put("B",1);
@@ -81,27 +81,27 @@ class Blood_Group{
             System.out.print("Name: ");
             String name = sc.nextLine();
             System.out.print("Phone Number: ");
-            int phoneNo = sc.nextInt();
+            int phoneNo = Integer.parseInt(sc.nextLine());
             System.out.print("Blood Group: ");
             String bldgrp = sc.nextLine();
-            sc.nextLine();
             d.addDonor(name,phoneNo,bldgrp);
+            
             if(BloodBank.containsKey(bldgrp)){
-                final int value = ((Object) BloodBank).getValue(bldgrp);
-                BloodBank.put(bldgrp,value+1);
-            } else {
-                System.out.println("Blood group " + bldgrp + " not found in the blood bank.");
-            }            
+                BloodBank.put(bldgrp,BloodBank.get(bldgrp)+1);
+            }
             System.out.println("Do you wanna continue adding the details of the donors:");
             m = sc.nextLine();
+
         }
+                    
+            
         List<Integer> PL= patientsList.stream().map(s->s.priority).sorted().collect(Collectors.toList());
         System.out.println(PL);
         BloodBank.entrySet().forEach(System.out::println);
         for (int i = 0; i < PL.size() ; i++) {
             if(BloodBank.containsKey(patientsList.get(i).bloodGrp)){
                 if((BloodBank.get(patientsList.get(i).bloodGrp))>=patientsList.get(i).bloodL){
-                    System.out.println("The patient "+patientsList.get(i).pname+" has been matched with a donor.");
+                    System.out.println("The patient "+patientsList.get(i).pname+" has been matched.");
                     BloodBank.replace(patientsList.get(i).bloodGrp,(BloodBank.get(patientsList.get(i).bloodGrp)) - (patientsList.get(i).bloodL));
                 }
                 /*else if(d.getDonors().contains(patientsList.get(i).bloodGrp)){
@@ -110,7 +110,6 @@ class Blood_Group{
                 }*/
                 else{
                     System.out.println("Not enough blood available in "+patientsList.get(i).bloodGrp+" group.");
-                    //System.out.println("No match found!");
                 }
             }
             else{
