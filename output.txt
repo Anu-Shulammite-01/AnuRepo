@@ -1,0 +1,3 @@
+Hello World!
+This is writing!
+45 37.986000

@@ -1,0 +1,2 @@
+Hello World!
+This message is copied to the another file.
