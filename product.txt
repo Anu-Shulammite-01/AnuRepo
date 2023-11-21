@@ -1,2 +1,2 @@
-Name: Apple	Price: 12	Quantity: 1
-Name: BAnana	Price: 13	Quantity: 5
+Name: Apple	Price: 10	Quantity: 3
+Name: Banana	Price: 15	Quantity: 6

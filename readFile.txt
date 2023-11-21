@@ -1,2 +1,3 @@
 Hello World!
 This message is copied to the another file.
+This is a String.
