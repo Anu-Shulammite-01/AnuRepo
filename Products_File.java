@@ -44,7 +44,7 @@ class Products_File {
         out.close();
         System.out.println("Data written successfully!");
 
-        Reader input = new FileReader("Products.txt");
+        Reader input = new FileReader("product.txt");
         BufferedReader br = new BufferedReader(input);
         String line;
         while ((line = br.readLine()) != null) {
