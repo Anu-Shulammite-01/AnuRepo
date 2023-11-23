@@ -28,6 +28,7 @@ class FileCrypto {
         String content = sb.toString().trim();
         System.out.println("Before Encryption: "+content);
 
+        //Key Generation
         KeyGenerator keyGen = KeyGenerator.getInstance("AES");
         keyGen.init(256);
         SecretKey sKey = keyGen.generateKey();
