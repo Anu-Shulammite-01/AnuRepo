@@ -1,3 +1,3 @@
-Name: Anu Role: Dev Salary: 68000
-Name: Srav Role: Tester Salary: 52000
-Name: Mehraj Role: HR Salary: 58000
+Name: J Role: dev Salary: 68000
+Name: S Role: tester Salary: 52000
+Name: A Role: hr Salary: 58000
