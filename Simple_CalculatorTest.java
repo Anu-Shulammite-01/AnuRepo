@@ -29,7 +29,6 @@ public class Simple_CalculatorTest {
         var sc = new Simple_Calculator();
         assertThrows(ArithmeticException.class,()->{
             sc.divide(5, 0);
-        });   
-        
+        });      
     }
 }
